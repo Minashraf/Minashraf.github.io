@@ -1,0 +1,103 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  background: #6495ED;
+}
+
+.memory-game {
+  width: 640px;
+  height: 640px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective:1000px;
+}
+
+.memory-card {
+  width: calc(16% - 10px);
+  height: calc(16% - 10px);
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  border-radius: 5px;
+  background: #A9A9A9;
+  backface-visibility:hidden;
+}
+.front-face{
+  transform:rotateY(180deg);
+}
+.memory-card.flip{
+  transform:rotateY(180deg);
+}
+footer{
+  color:yellow;
+  position: absolute;
+  bottom: 0%;
+  left:35%;
+  font-size:20px;
+}
+#title-left{
+  top:30%;
+  position:absolute;
+  color:yellow;
+  font-family: "Arial Black", Gadget, sans-serif;
+  left:3%;
+}
+#title-right{
+  color:yellow;
+  position:absolute;
+  font-family: "Arial Black", Gadget, sans-serif;
+  top:40%;
+  right:3%;
+}
+.stopwatch {
+	color: white;
+  font-size: 5vw;
+  height: 5%;
+  position:absolute;
+  bottom: 40%;
+  right: 8%;
+}
+#start
+{
+	position:absolute;
+  bottom:50%;
+  right:15%;
+}
+#solve
+{
+	position:absolute;
+  bottom:50%;
+  left:15%;
+}
+.button {
+  background-color: #808080; 
+  border-radius: 50%;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
